@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" >
+
+    <TextView
+        android:id="@+id/tw_num_attackers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="18dp"
+        android:text="@string/num_attackers" />
+
+    <RadioGroup
+        android:id="@+id/rdgrp_num_attackers"
+        android:layout_width="185dp"
+        android:layout_height="35dp"
+        android:layout_alignLeft="@+id/tw_num_attackers"
+        android:layout_below="@+id/tw_num_attackers"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/rd_num_attackers_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="validDefenderNumber"
+            android:text="@string/numbers_one" />
+
+        <RadioButton
+            android:id="@+id/rd_num_attackers_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="23dp"
+            android:text="@string/numbers_two" />
+
+        <RadioButton
+            android:id="@+id/rd_num_attackers_three"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:checked="true"
+            android:text="@string/numbers_three" />
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/rdgrp_num_defenders"
+        android:layout_width="185dp"
+        android:layout_height="35dp"
+        android:layout_alignLeft="@+id/tw_num_defenders"
+        android:layout_below="@+id/tw_num_defenders"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/rd_num_defenders_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/numbers_one" />
+
+        <RadioButton
+            android:id="@+id/rd_num_defenders_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="22dp"
+            android:checked="true"
+            android:onClick="validDefenderNumber"
+            android:text="@string/numbers_two" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/tw_num_defenders"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/rdgrp_num_attackers"
+        android:layout_below="@+id/rdgrp_num_attackers"
+        android:text="@string/num_defenders" />
+
+    <TextView
+        android:id="@+id/tw_results"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/rdgrp_num_defenders"
+        android:layout_below="@+id/btn_roll"
+        android:layout_marginTop="14dp"
+        android:text="@string/results_title"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/tw_attackers_results"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tw_results"
+        android:layout_below="@+id/tw_results"
+        android:text="@string/attacker_results" />
+
+    <TextView
+        android:id="@+id/tw_attackers_die"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tw_attackers_results"
+        android:layout_below="@+id/tw_attackers_results"
+        android:text="placeholder" />
+
+    <Button
+        android:id="@+id/btn_roll"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/tw_num_attackers"
+        android:layout_below="@+id/rdgrp_num_defenders"
+        android:layout_marginRight="16dp"
+        android:onClick="rollDie"
+        android:text="@string/roll_button_text" />
+
+    <TextView
+        android:id="@+id/tw_defenders_results"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tw_results"
+        android:layout_centerHorizontal="true"
+        android:text="@string/defender_results" />
+
+    <TextView
+        android:id="@+id/tw_attackers_losses"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tw_attackers_die"
+        android:layout_below="@+id/tw_attackers_die"
+        android:text="placeholder" />
+
+    <TextView
+        android:id="@+id/tw_defenders_die"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tw_defenders_losses"
+        android:layout_alignLeft="@+id/tw_defenders_results"
+        android:text="placeholder" />
+
+    <TextView
+        android:id="@+id/tw_defenders_losses"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tw_attackers_losses"
+        android:layout_alignBottom="@+id/tw_attackers_losses"
+        android:layout_alignLeft="@+id/tw_defenders_die"
+        android:text="placeholder" />
+
+</RelativeLayout>
